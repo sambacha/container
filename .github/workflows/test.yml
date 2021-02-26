@@ -14,5 +14,6 @@ jobs:
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
         # Only needed for private caches
         #authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+    - run: sudo nix-channel --add https://nixos.org/channels/nixos-17.03 nixos
     - run: nix-build
     - run: nix-shell --run "echo OK"
